@@ -42,17 +42,51 @@ header[data-testid="stHeader"] {
         color: #00e5ff !important;
     }
 
-    /* === SIDEBAR === */
-    section[data-testid="stSidebar"] {
-       background-color: white !important;
-    color: #000000 !important;
-    border-right: 1px solid #cccccc;
-    }
+    /* === SIDEBAR === *
+    /* === SIDEBAR COLLAPSE BUTTON FIX === */
+//* === SIDEBAR COLLAPSE BUTTON (BLUE >> ICON + CLICK TEXT) === */
+[data-testid="collapsedControl"] {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    background-color: transparent !important;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add "Click" label next to the >> icon */
+[data-testid="collapsedControl"]::after {
+    content: "Click";
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Make the >> icon BLUE */
+[data-testid="collapsedControl"] svg {
+    stroke: #00e5ff !important;
+    fill: #00e5ff !important;
+    width: 18px;
+    height: 18px;
+}
+
+/* On hover */
+[data-testid="collapsedControl"]:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 229, 255, 0.1);
+}
 
     /* Fix radio button label colors in sidebar */
     section[data-testid="stSidebar"] .css-1v0mbdj,
     section[data-testid="stSidebar"] .css-10trblm {
-        color: yellow !important;
+        color: black !important;
         font-weight: bold;
     }
 
